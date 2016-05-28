@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.24
-Release  : 23
+Release  : 24
 URL      : http://cran.r-project.org/src/contrib/quantreg_5.24.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/quantreg_5.24.tar.gz
 Summary  : Quantile Regression
@@ -13,8 +13,12 @@ License  : GPL-2.0+
 Requires: R-quantreg-lib
 Requires: R-MatrixModels
 Requires: R-SparseM
+Requires: R-zoo
+Requires: R-dynlm
 BuildRequires : R-MatrixModels
 BuildRequires : R-SparseM
+BuildRequires : R-dynlm
+BuildRequires : R-zoo
 BuildRequires : clr-R-helpers
 
 %description
@@ -52,6 +56,7 @@ mkdir -p %{buildroot}/usr/lib64/R/library
 R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library quantreg
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
