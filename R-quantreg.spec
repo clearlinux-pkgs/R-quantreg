@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.29
-Release  : 31
+Release  : 32
 URL      : http://cran.r-project.org/src/contrib/quantreg_5.29.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/quantreg_5.29.tar.gz
 Summary  : Quantile Regression
@@ -42,9 +42,11 @@ lib components for the R-quantreg package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484546555
 
 %install
 rm -rf %{buildroot}
+export SOURCE_DATE_EPOCH=1484546555
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -54,7 +56,7 @@ export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
-R CMD INSTALL --install-tests --build  -l %{buildroot}/usr/lib64/R/library quantreg
+R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library quantreg
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
 export LANG=C
