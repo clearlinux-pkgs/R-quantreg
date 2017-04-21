@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.33
-Release  : 36
+Release  : 37
 URL      : http://cran.r-project.org/src/contrib/quantreg_5.33.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/quantreg_5.33.tar.gz
 Summary  : Quantile Regression
@@ -41,12 +41,15 @@ lib components for the R-quantreg package.
 %setup -q -c -n quantreg
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492523370
+export SOURCE_DATE_EPOCH=1492802570
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1492523370
+export SOURCE_DATE_EPOCH=1492802570
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,7 +65,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library quantreg || :
 
@@ -76,6 +79,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/quantreg/Meta/Rd.rds
 /usr/lib64/R/library/quantreg/Meta/data.rds
 /usr/lib64/R/library/quantreg/Meta/demo.rds
+/usr/lib64/R/library/quantreg/Meta/features.rds
 /usr/lib64/R/library/quantreg/Meta/hsearch.rds
 /usr/lib64/R/library/quantreg/Meta/links.rds
 /usr/lib64/R/library/quantreg/Meta/nsInfo.rds
