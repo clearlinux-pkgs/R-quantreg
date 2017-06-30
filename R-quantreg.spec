@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.33
-Release  : 39
+Release  : 40
 URL      : http://cran.r-project.org/src/contrib/quantreg_5.33.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/quantreg_5.33.tar.gz
 Summary  : Quantile Regression
