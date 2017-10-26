@@ -1,5 +1,5 @@
 PKG_NAME := R-quantreg
-URL := http://cran.r-project.org/src/contrib/quantreg_5.33.tar.gz
+URL := https://cran.r-project.org/src/contrib/quantreg_5.34.tar.gz
 
 
 include ../common/Makefile.common
