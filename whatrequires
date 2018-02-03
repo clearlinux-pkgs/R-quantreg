@@ -7,10 +7,11 @@ R-ggplot2
 R-gtools
 R-lme4
 R-lmtest
-R-microbenchmark
 R-multcomp
 R-pbkrtest
 R-quantreg
+R-rmarkdown
 R-sandwich
-R-tibble
+R-shiny
 R-tis
+apache-spark
