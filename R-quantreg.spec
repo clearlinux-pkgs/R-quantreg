@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.38
-Release  : 64
+Release  : 65
 URL      : https://cran.r-project.org/src/contrib/quantreg_5.38.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/quantreg_5.38.tar.gz
 Summary  : Quantile Regression
@@ -41,10 +41,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552871905
+export SOURCE_DATE_EPOCH=1552872217
 
 %install
-export SOURCE_DATE_EPOCH=1552871905
+export SOURCE_DATE_EPOCH=1552872217
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
