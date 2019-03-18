@@ -4,17 +4,13 @@
 #
 Name     : R-quantreg
 Version  : 5.38
-Release  : 63
+Release  : 64
 URL      : https://cran.r-project.org/src/contrib/quantreg_5.38.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/quantreg_5.38.tar.gz
 Summary  : Quantile Regression
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-quantreg-lib = %{version}-%{release}
-Requires: R-MatrixModels
-Requires: R-SparseM
-Requires: R-dynlm
-Requires: R-zoo
 BuildRequires : R-MatrixModels
 BuildRequires : R-SparseM
 BuildRequires : R-dynlm
@@ -22,10 +18,12 @@ BuildRequires : R-zoo
 BuildRequires : buildreq-R
 
 %description
-Linear and nonlinear parametric and non-parametric (total variation penalized) models 
-  for conditional quantiles of a univariate response and several methods for handling
-  censored survival data.  Portfolio selection methods based on expected shortfall
-  risk are also included.
+Versions of quantreg between 3.70 and 4.75 were removed from the CRAN
+archive due to uncertainties over the licensing status of the fortran
+code in src/cholesky.f.  As of 9 March 2012, original authors of cholesky.f,
+Esmond Ng and Barry Peyton,  have now, very kindly,  given permission to
+use cholesky.f under an open source license.  They have requested that
+their code be credited via the following two publications:
 
 %package lib
 Summary: lib components for the R-quantreg package.
@@ -43,10 +41,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1545251147
+export SOURCE_DATE_EPOCH=1552871905
 
 %install
-export SOURCE_DATE_EPOCH=1545251147
+export SOURCE_DATE_EPOCH=1552871905
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -82,8 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library quantreg|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  quantreg || :
 
 
 %files
@@ -150,7 +147,10 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/quantreg/help/quantreg.rdx
 /usr/lib64/R/library/quantreg/html/00Index.html
 /usr/lib64/R/library/quantreg/html/R.css
-/usr/lib64/R/library/quantreg/libs/symbols.rds
+/usr/lib64/R/library/quantreg/tests/panel.R
+/usr/lib64/R/library/quantreg/tests/rq.R
+/usr/lib64/R/library/quantreg/tests/rq.fit.panel.R
+/usr/lib64/R/library/quantreg/tests/run-demos.R
 
 %files lib
 %defattr(-,root,root,-)
