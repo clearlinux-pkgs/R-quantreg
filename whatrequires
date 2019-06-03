@@ -1,8 +1,11 @@
 # This file contains recursive sources that require this package
+R-AER
 R-MCMCpack
+R-PerformanceAnalytics
 R-SGP
 R-car
 R-cobs
 R-ggplot2
+R-haplo.stats
 R-latticeExtra
 R-rms
