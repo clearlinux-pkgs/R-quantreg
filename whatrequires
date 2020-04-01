@@ -1,11 +1,9 @@
 # This file contains recursive sources that require this package
 R-MCMCpack
-R-PerformanceAnalytics
 R-SGP
 R-car
 R-cobs
-R-ggplot2
-R-joineRML
 R-latticeExtra
 R-miscF
 R-rms
+R-sn
