@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.55
-Release  : 82
+Release  : 83
 URL      : https://cran.r-project.org/src/contrib/quantreg_5.55.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/quantreg_5.55.tar.gz
 Summary  : Quantile Regression
@@ -18,12 +18,10 @@ BuildRequires : R-SparseM
 BuildRequires : buildreq-R
 
 %description
-Versions of quantreg between 3.70 and 4.75 were removed from the CRAN
-archive due to uncertainties over the licensing status of the fortran
-code in src/cholesky.f.  As of 9 March 2012, original authors of cholesky.f,
-Esmond Ng and Barry Peyton,  have now, very kindly,  given permission to
-use cholesky.f under an open source license.  They have requested that
-their code be credited via the following two publications:
+Linear and nonlinear parametric and non-parametric (total variation penalized) models 
+  for conditional quantiles of a univariate response and several methods for handling
+  censored survival data.  Portfolio selection methods based on expected shortfall
+  risk are also now included.
 
 %package lib
 Summary: lib components for the R-quantreg package.
@@ -35,21 +33,22 @@ lib components for the R-quantreg package.
 
 %prep
 %setup -q -c -n quantreg
+cd %{_builddir}/quantreg
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585750430
+export SOURCE_DATE_EPOCH=1589566400
 
 %install
-export SOURCE_DATE_EPOCH=1585750430
+export SOURCE_DATE_EPOCH=1589566400
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
