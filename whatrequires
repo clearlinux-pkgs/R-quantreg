@@ -1,8 +1,8 @@
 # This file contains recursive sources that require this package
+R-DAAG
 R-MCMCpack
 R-SGP
 R-car
 R-cobs
-R-latticeExtra
 R-rms
 R-sn
