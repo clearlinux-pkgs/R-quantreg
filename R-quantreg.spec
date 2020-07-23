@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.61
-Release  : 85
+Release  : 86
 URL      : https://cran.r-project.org/src/contrib/quantreg_5.61.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/quantreg_5.61.tar.gz
 Summary  : Quantile Regression
@@ -13,6 +13,7 @@ License  : GPL-2.0+
 Requires: R-quantreg-lib = %{version}-%{release}
 Requires: R-MatrixModels
 Requires: R-SparseM
+Requires: R-conquer
 BuildRequires : R-MatrixModels
 BuildRequires : R-SparseM
 BuildRequires : R-conquer
@@ -41,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595431280
+export SOURCE_DATE_EPOCH=1595524200
 
 %install
-export SOURCE_DATE_EPOCH=1595431280
+export SOURCE_DATE_EPOCH=1595524200
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
