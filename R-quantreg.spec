@@ -4,7 +4,7 @@
 #
 Name     : R-quantreg
 Version  : 5.93
-Release  : 113
+Release  : 114
 URL      : https://cran.r-project.org/src/contrib/quantreg_5.93.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/quantreg_5.93.tar.gz
 Summary  : Quantile Regression
