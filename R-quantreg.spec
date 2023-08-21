@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-quantreg
-Version  : 5.96
-Release  : 122
-URL      : https://cran.r-project.org/src/contrib/quantreg_5.96.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/quantreg_5.96.tar.gz
+Version  : 5.97
+Release  : 123
+URL      : https://cran.r-project.org/src/contrib/quantreg_5.97.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/quantreg_5.97.tar.gz
 Summary  : Quantile Regression
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -46,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689804791
+export SOURCE_DATE_EPOCH=1692633610
 
 %install
-export SOURCE_DATE_EPOCH=1689804791
+export SOURCE_DATE_EPOCH=1692633610
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
