@@ -1,5 +1,5 @@
 PKG_NAME := R-quantreg
-URL = https://cran.r-project.org/src/contrib/quantreg_5.98.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/quantreg_5.99.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
